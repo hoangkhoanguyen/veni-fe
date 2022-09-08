@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-    
+    {console.log(process.env.REACT_APP_URL_BACKEND)}
       <Header />
       <main className="main-site">
         <Router>
