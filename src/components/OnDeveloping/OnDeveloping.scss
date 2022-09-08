@@ -1,0 +1,16 @@
+@import url(../../_variables.css);
+
+.on-dev {
+    text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    i {
+        font-size: 55px;
+    }
+    h3 {
+        color: var(--main-text-color);
+        font-weight: 700;
+    }
+}

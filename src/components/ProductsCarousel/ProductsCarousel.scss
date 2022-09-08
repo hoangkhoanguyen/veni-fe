@@ -1,0 +1,19 @@
+.product-container {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    // overflow: auto;
+    display: flex;
+    // grid-template-columns: repeat(3, auto);
+    row-gap: 20px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    padding: 80px 0;
+    justify-content: center;
+
+    .product-item {
+        height: max-content;
+        width: 300px;
+    }
+}

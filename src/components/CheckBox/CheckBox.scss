@@ -1,0 +1,33 @@
+@import url(../../_variables.css);
+.my-check-box {
+    input{
+        display: none;
+    }
+    label{
+        cursor: pointer;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        border: 1px solid #adadad;
+        border-radius: 4px;
+        position: relative;
+        color: white !important;
+        i{
+            display: none;
+        }
+       
+    }
+    input:checked ~ label {
+        background-color: var(--primary-color) ;
+        i{
+            display: block;
+        }
+    }
+
+    input:checked ~ label.color {
+        background-color: var(--color);
+        i{
+            display: block;
+        }
+    }
+}

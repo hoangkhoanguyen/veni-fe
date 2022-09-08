@@ -1,0 +1,27 @@
+@import url(../../_variables.css);
+
+.product-line-container{
+    display: flex;
+    flex-direction: row;
+    .check-box{
+        input{
+
+        }
+    }
+
+    .product-name{
+        a{
+            // text-decoration: none;
+            // color: ;
+        }
+    }
+    .delete-btn{
+        i{
+            // cursor: pointer;
+            &:hover {
+                // color: ;
+                border: 1px solid var(--main-text-color);
+            }
+        }
+    }
+}

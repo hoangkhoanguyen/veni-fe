@@ -1,0 +1,60 @@
+@import url(../../_variables.css);
+
+footer {
+  background-color: #F3F6FA;
+  padding: 24px 0;
+  .footer-title{
+    color: var(--main-text-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .footer__widget {
+    display: flex;
+    flex-direction: row;
+    ul{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .email-input{
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    button {
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 800;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 13px 30px 12px;
+      background: var(--primary-color);
+    }
+    input {
+      flex: 1;
+      font-size: 16px;
+      padding-left: 20px;
+      color: var(--main-text-color);
+      height: 46px;
+      border: 1px solid #ededed;
+    }
+  }
+  .social-contact {
+    a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: white;
+      color: var(--main-text-color);
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
+  }
+}

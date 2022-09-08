@@ -1,0 +1,90 @@
+@import url(../../_variables.css);
+
+.product-card-body {
+    .img{
+        width: 100%;
+        height: 290px;
+        background-repeat: no-repeat !important;
+        background-size: 100% 100% !important;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 12px;
+
+        .discount {
+            display: inline-block;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            background-color: #dd2222;
+            color: white;
+            line-height: 45px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        ul {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            transition: 0.3s;
+            li{
+                background-color: white;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                line-height: 40px;
+                transform: rotate(0);
+                transition: 0.5s;
+                cursor: pointer;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                }
+
+                &:hover {
+                    background-color: var(--primary-color);
+                    color: white;
+                    transform: rotate(360deg);
+                    transition: 0.5s;
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .content{
+        p:nth-child(2) {
+            color: var(--main-text-color);
+            font-weight: 700;
+            span {
+                font-weight: 400;
+                text-decoration: line-through;
+                margin-left: 10px;;
+                font-size: 14px;
+                color: #b2b2b2;
+            }
+        }
+        p:nth-child(1) {
+            margin-bottom: 0;
+            text-transform: capitalize;
+        }
+    }
+
+    &:hover {
+        .img {
+            ul{
+                bottom: 20px;
+                transition: 0.3s;
+            }
+        } 
+    }
+    
+}
