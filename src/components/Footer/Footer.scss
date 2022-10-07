@@ -1,9 +1,9 @@
 @import url(../../_variables.css);
 
 footer {
-  background-color: #F3F6FA;
+  background-color: #f3f6fa;
   padding: 24px 0;
-  .footer-title{
+  .footer-title {
     color: var(--main-text-color);
     font-weight: 700;
     margin-bottom: 10px;
@@ -11,13 +11,28 @@ footer {
   .footer__widget {
     display: flex;
     flex-direction: row;
-    ul{
+    ul {
       width: 50%;
       display: flex;
       flex-direction: column;
     }
   }
-  .email-input{
+  .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    img {
+      width: 24%;
+    }
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 45px;
+    }
+  }
+  .email-input {
     display: flex;
     flex-direction: row;
     height: max-content;
