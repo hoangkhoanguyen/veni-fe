@@ -98,7 +98,7 @@ export const Login = () => {
   };
 
   const responseFacebook = async (response) => {
-    console.log(response);
+    console.log("response", response);
     return;
     try {
       let result = await userService.loginWithFacebook({
