@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+// import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { GoogleLogin } from "@react-oauth/google";
 import FacebookLogin from "react-facebook-login";
 import { toast } from "react-toastify";
 import { gapi } from "gapi-script";
@@ -223,7 +224,7 @@ export const Login = () => {
             </div>
             <div className="col-12 mb-3">
               <div className="google-login">
-                <GoogleLogin
+                {/* <GoogleLogin
                   // clientId={process.env.REACT_APP_GOOGLE_APP_ID}
                   clientId={
                     "1029413178204-rjrv66kpu777serp5v56khtied5ih7m5.apps.googleusercontent.com"
@@ -232,13 +233,23 @@ export const Login = () => {
                   onSuccess={handleLinkGoogleSuccess}
                   onFailure={handleLinkFail}
                   cookiePolicy={"single_host_origin"}
-                ></GoogleLogin>
+                ></GoogleLogin> */}
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    console.log(credentialResponse.credential);
+                    // let decoded = jwt_decode(credentialResponse.credential);
+                    // console.log(decoded);
+                  }}
+                  onError={() => {
+                    console.log("Login Failed");
+                  }}
+                />
               </div>
             </div>
             <div className="col-12">
               <div className="facebook-login">
                 <FacebookLogin
-                  appId="667288041425895"
+                  appId={process.env.REACT_APP_FACEBOOK_APP_ID}
                   autoLoad={true}
                   fields="name,email,picture"
                   onClick={componentClicked}
