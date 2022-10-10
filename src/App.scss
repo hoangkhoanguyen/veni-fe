@@ -8,7 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 main {
@@ -27,31 +27,31 @@ button {
   outline: none;
 }
 
-ul{
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
- 
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
 
-.title-section{
+.title-section {
   color: #1c1c1c;
   font-weight: 700;
   position: relative;
   text-align: center;
   padding-bottom: 12px;
-  h2{
+  h2 {
     font-weight: 700;
     text-transform: capitalize;
   }
 }
 
 .title-section::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -61,19 +61,18 @@ a{
   background-color: var(--primary-color);
 }
 
-.logo{
+.logo {
   height: 80px;
-  a{
+  a {
     font-size: 40px;
     text-decoration: none;
     text-transform: uppercase;
-    background: -webkit-linear-gradient(#E8D088, var(--primary-color));
+    background: -webkit-linear-gradient(#e8d088, var(--primary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
   }
 }
-
 
 .button-outline {
   width: 100%;
@@ -83,11 +82,12 @@ a{
   height: 40px;
   text-transform: uppercase;
   border: 2px solid var(--primary-color);
+  transition: 0.3s ease-in-out;
   cursor: pointer;
   &:hover {
-      background-color: var(--primary-color);
-      color: white;
-      // font-size: medium;
+    background-color: var(--primary-color);
+    color: white;
+    // font-size: medium;
   }
 }
 
@@ -103,4 +103,13 @@ button:disabled {
 
 .compul {
   color: #dd2222 !important;
+}
+
+.back-home {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

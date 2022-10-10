@@ -43,13 +43,13 @@ export const Login = () => {
     }
   }, []);
 
-  const handleLinkGoogleSuccess = async (googleData) => {
+  const handleLoginGoogleSuccess = async (googleData) => {
     console.log(googleData);
-    return;
-    if (googleData && googleData.tokenId) {
+    // return;
+    if (googleData && googleData.credential) {
       try {
         let result = await userService.loginWithGoogle({
-          tokenId: googleData.tokenId,
+          tokenId: googleData.credential,
         });
         console.log(result);
         if (result && result.errCode === 0) {
@@ -99,8 +99,9 @@ export const Login = () => {
   };
 
   const responseFacebook = async (response) => {
-    console.log("response", response);
-    return;
+    console.log("response", response.accessToken);
+    // return;
+    if (!response) return;
     try {
       let result = await userService.loginWithFacebook({
         accessToken: response.accessToken,
@@ -191,40 +192,45 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      {/* <div className='back-img'>
-            </div> */}
-      <div className="login-body">
-        <div className="info-content">
-          <div>
-            <input
-              placeholder="Username"
-              type="text"
-              value={username}
-              onKeyDown={handlePressEnter}
-              onChange={handleChangeUsername}
-            />
-            <span></span>
-          </div>
-          <div className="mb-4">
-            <input
-              placeholder="Password"
-              type="password"
-              value={password}
-              onChange={handleChangePassword}
-              onKeyDown={handlePressEnter}
-            />
-            <span></span>
-          </div>
-          <div className="row">
-            <div className="col-12 mb-3">
-              <button className="button-outline" onClick={handleClickLogin}>
-                Log in
-              </button>
+    <>
+      <a className="back-home" href={path.HOMEPAGE}>
+        <i className="fas fa-arrow-left"></i>
+        Back to homepage
+      </a>
+      <div className="login-container">
+        <div className="back-img"></div>
+        <div className="login-body">
+          <h2>LOGIN</h2>
+          <div className="info-content">
+            <div>
+              <input
+                placeholder="Username"
+                type="text"
+                value={username}
+                onKeyDown={handlePressEnter}
+                onChange={handleChangeUsername}
+              />
+              <span></span>
             </div>
-            <div className="col-12 mb-3">
-              <div className="google-login">
-                {/* <GoogleLogin
+            <div className="mb-4">
+              <input
+                placeholder="Password"
+                type="password"
+                value={password}
+                onChange={handleChangePassword}
+                onKeyDown={handlePressEnter}
+              />
+              <span></span>
+            </div>
+            <div className="row">
+              <div className="col-12 mb-3">
+                <button className="button-outline" onClick={handleClickLogin}>
+                  Log in
+                </button>
+              </div>
+              <div className="col-12 mb-3">
+                <div className="google-login">
+                  {/* <GoogleLogin
                   // clientId={process.env.REACT_APP_GOOGLE_APP_ID}
                   clientId={
                     "1029413178204-rjrv66kpu777serp5v56khtied5ih7m5.apps.googleusercontent.com"
@@ -234,38 +240,35 @@ export const Login = () => {
                   onFailure={handleLinkFail}
                   cookiePolicy={"single_host_origin"}
                 ></GoogleLogin> */}
-                <GoogleLogin
-                  onSuccess={(credentialResponse) => {
-                    console.log(credentialResponse.credential);
-                    // let decoded = jwt_decode(credentialResponse.credential);
-                    // console.log(decoded);
-                  }}
-                  onError={() => {
-                    console.log("Login Failed");
-                  }}
-                />
+                  <GoogleLogin
+                    onSuccess={handleLoginGoogleSuccess}
+                    onError={() => {
+                      console.log("Login Failed");
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-12">
-              <div className="facebook-login">
-                <FacebookLogin
-                  appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-                  autoLoad={true}
-                  fields="name,email,picture"
-                  onClick={componentClicked}
-                  callback={responseFacebook}
-                />
+              <div className="col-12">
+                <div className="facebook-login">
+                  <FacebookLogin
+                    appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+                    autoLoad={false}
+                    fields="name,email,picture"
+                    onClick={componentClicked}
+                    callback={responseFacebook}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <p>
+          You have no account?{" "}
+          <a className="register" href={path.REGISTER}>
+            Register now
+          </a>
+        </p>
       </div>
-      <p>
-        You have no account?{" "}
-        <a className="register" href={path.REGISTER}>
-          Register now
-        </a>
-      </p>
-    </div>
+    </>
   );
 };
