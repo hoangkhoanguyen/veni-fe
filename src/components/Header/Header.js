@@ -150,7 +150,19 @@ export const Header = () => {
                         <div className="user-option">
                           <span>
                             <a href={path.PROFILE}>
-                              <i class="fas fa-user"></i> My account
+                              <i className="fas fa-user"></i> My account
+                            </a>
+                          </span>
+
+                          <span>
+                            <a href={path.MY_STORE}>
+                              <i className="fas fa-store"></i> My shop
+                            </a>
+                          </span>
+
+                          <span>
+                            <a href={path.HISTORY}>
+                              <i className="fas fa-history"></i> My orders
                             </a>
                           </span>
 
@@ -189,9 +201,10 @@ export const Header = () => {
                   <li>
                     <a href={path.CONTACT}>Contact</a>
                   </li>
-                  <li>
+
+                  {/* <li>
                     <a href={path.MY_STORE}>Manage My shop</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="d-lg-none toggle_navbar_btn">
