@@ -179,7 +179,7 @@ export const Profile = () => {
               ></GoogleLogin>
             </div>
           )}
-          {!userInfo.isLinkedGoogle && !userInfo.isLinkedFacebook && (
+          {/* {!userInfo.isLinkedGoogle && !userInfo.isLinkedFacebook && (
             <div className="link-facebook">
               <FacebookLogin
                 appId={process.env.REACT_APP_FACEBOOK_APP_ID}
@@ -188,7 +188,7 @@ export const Profile = () => {
                 callback={responseFacebook}
               />
             </div>
-          )}
+          )} */}
 
           <button onClick={handleClickUpdatebtn}>Update</button>
         </div>

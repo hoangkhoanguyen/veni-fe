@@ -99,7 +99,7 @@ export const Login = () => {
   };
 
   const responseFacebook = async (response) => {
-    console.log('facebook',process.env.REACT_APP_FACEBOOK_APP_ID)
+    console.log("facebook", process.env.REACT_APP_FACEBOOK_APP_ID);
     console.log("response", response.accessToken);
     // return;
     if (!response) return;
@@ -249,7 +249,7 @@ export const Login = () => {
                   />
                 </div>
               </div>
-              <div className="col-12">
+              {/* <div className="col-12">
                 <div className="facebook-login">
                   <FacebookLogin
                     appId={process.env.REACT_APP_FACEBOOK_APP_ID}
@@ -259,7 +259,7 @@ export const Login = () => {
                     callback={responseFacebook}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
