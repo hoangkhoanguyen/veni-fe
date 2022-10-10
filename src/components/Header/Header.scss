@@ -393,6 +393,22 @@ header {
       }
     }
   }
+
+  .user-mobile {
+    padding: 8px 0;
+    > span {
+      cursor: pointer;
+    }
+    .user-option {
+      display: flex;
+      flex-direction: column;
+      padding-left: 12px;
+      span {
+        padding: 8px 0;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media (max-width: 1200px) {

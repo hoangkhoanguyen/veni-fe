@@ -24,6 +24,7 @@ export const Header = () => {
   const [itemsInCart, setItemsInCart] = useState(0);
   const [itemsInHeart, setItemsInHeart] = useState(0);
   const [searchText, setSearchText] = useState("");
+  const [isShowUserOptionsMobile, setIsShowUserOptionsMobile] = useState(false);
 
   useEffect(() => {
     let itemsList = cookieService.get(
@@ -234,17 +235,59 @@ export const Header = () => {
                 <div className="close-btn" onClick={toggleNavbarMenu}>
                   <i className="fas fa-times"></i>
                 </div>
-                <div>
-                  {/* <span className="language">
+                {!isLogin && (
+                  <div className="log-in-out">
+                    <a href={path.LOGIN}>
+                      <i className="fa fa-user"></i> Login
+                    </a>
+                  </div>
+                )}
+                {isLogin && userInfo && (
+                  <div className="user-mobile">
+                    {/* <span className="language">
                     <img src="/icon/VN_flag.png" alt="" />
                     <span>Tiếng Việt</span>
                   </span> */}
-                  <span className="log-in-out">
+                    {/* <span className="log-in-out">
                     <a href="#">
                       <i className="fa fa-user"></i> Login
                     </a>
-                  </span>
-                </div>
+                  </span> */}
+                    {/* {userInfo.firstName + " " + userInfo.lastName} */}
+                    <span
+                      onClick={() => {
+                        setIsShowUserOptionsMobile(!isShowUserOptionsMobile);
+                      }}
+                    >
+                      {userInfo.firstName + " " + userInfo.lastName}
+                    </span>
+                    {isShowUserOptionsMobile && (
+                      <div className="user-option">
+                        <span>
+                          <a href={path.PROFILE}>
+                            <i className="fas fa-user"></i> My account
+                          </a>
+                        </span>
+
+                        <span>
+                          <a href={path.MY_STORE}>
+                            <i className="fas fa-store"></i> My shop
+                          </a>
+                        </span>
+
+                        <span>
+                          <a href={path.HISTORY}>
+                            <i className="fas fa-history"></i> My orders
+                          </a>
+                        </span>
+
+                        <span onClick={handleLogout}>
+                          <i className="fas fa-sign-out-alt"></i> Log out
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <ul>
                   <li>
                     <a href={path.HOMEPAGE}>Home</a>
@@ -256,9 +299,9 @@ export const Header = () => {
                   <li>
                     <a href={path.CONTACT}>Contact</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href={path.MY_STORE}>Manage My shop</a>
-                  </li>
+                  </li> */}
                 </ul>
                 <div className="contact-social">
                   <a
