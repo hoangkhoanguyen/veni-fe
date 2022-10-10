@@ -16,7 +16,7 @@ export const Footer = () => {
               <p>Phone: +84 772.028.960</p>
               <p>
                 Email:{" "}
-                <a href="mailto:nguyenhoangkhoa2882@gmail.com">
+                <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`}>
                   nguyenhoangkhoa2882@gmail.com
                 </a>
               </p>
@@ -80,11 +80,11 @@ export const Footer = () => {
               <div className="social-contact">
                 <a
                   target="_blank"
-                  href="https://www.facebook.com/hoangkhoanguyen2305"
+                  href={process.env.REACT_APP_CONTACT_FACEBOOK}
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a target="_blank" href="https://github.com/hoangkhoanguyen">
+                <a target="_blank" href={process.env.REACT_APP_CONTACT_GITHUB}>
                   <i className="fab fa-github"></i>
                 </a>
               </div>

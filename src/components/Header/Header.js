@@ -248,8 +248,17 @@ export const Header = () => {
                   </li>
                 </ul>
                 <div className="contact-social">
-                  <a href="#">
+                  <a
+                    target="_blank"
+                    href={process.env.REACT_APP_CONTACT_FACEBOOK}
+                  >
                     <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href={process.env.REACT_APP_CONTACT_GITHUB}
+                  >
+                    <i className="fab fa-github"></i>
                   </a>
                   <a href="#">
                     <i className="fab fa-twitter"></i>
@@ -258,10 +267,10 @@ export const Header = () => {
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
-                <div>
+                <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`}>
                   <i className="fa fa-envelope"></i>{" "}
                   nguyenhoangkhoa2882@gmail.com
-                </div>
+                </a>
                 <div> Free Shipping for all Order of $99</div>
               </div>
             </div>
