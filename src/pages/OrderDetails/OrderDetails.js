@@ -24,11 +24,11 @@ export const OrderDetails = () => {
       let result = await orderService.getOrderHistory(index);
       console.log(result);
       if (result && result.errCode === 0) {
-        console.log(result.data.productIdList);
-        if (result.data.productIdList) {
+        console.log(result.data.productList);
+        if (result.data.productList) {
           console.log("parse");
-          setProductInfoList(JSON.parse(result.data.productIdList));
-          console.log(JSON.parse(result.data.productIdList));
+          setProductInfoList(JSON.parse(result.data.productList));
+          console.log(JSON.parse(result.data.productList));
         }
         setOrderInfo(result.data);
       }
