@@ -179,7 +179,7 @@ export const OrderDetails = () => {
                       isReOrder={isReOrder} data={item} key={index} index={index}/>
                   })} */}
             {console.log(orderInfo)}
-            {console.log(JSON.parse(orderInfo.productList))}
+            {console.log(productInfoList)}
             {orderInfo && orderInfo}
           </tbody>
         </table>
