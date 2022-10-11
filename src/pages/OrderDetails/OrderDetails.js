@@ -82,6 +82,7 @@ export const OrderDetails = () => {
 
   useEffect(() => {
     if (orderInfo && orderInfo.productIdList) {
+      console.log("parse");
       let arr = JSON.parse(orderInfo.productIdList);
       let result = getProductIdAndQuantity(arr);
       setProductInfoList(result);
@@ -180,7 +181,7 @@ export const OrderDetails = () => {
                       isReOrder={isReOrder} data={item} key={index} index={index}/>
                   })} */}
             {console.log(orderInfo)}
-            {orderInfo && console.log(orderInfo.productList)}
+            {orderInfo && console.log(JSON.parse(orderInfo.productList))}
             {/* {orderInfo && orderInfo} */}
           </tbody>
         </table>
