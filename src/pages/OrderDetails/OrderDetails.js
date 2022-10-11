@@ -25,6 +25,9 @@ export const OrderDetails = () => {
       console.log(result);
       if (result && result.errCode === 0) {
         setOrderInfo(result.data);
+        if (result.data.productIdList) {
+          setProductInfoList(JSON.parse(result.data.productIdList));
+        }
       }
     } catch (error) {
       console.log(error);
@@ -80,15 +83,15 @@ export const OrderDetails = () => {
     return result;
   };
 
-  useEffect(() => {
-    if (orderInfo && orderInfo.productIdList) {
-      console.log("parse");
-      let arr = JSON.parse(orderInfo.productIdList);
-      let result = getProductIdAndQuantity(arr);
-      setProductInfoList(result);
-      console.log(result);
-    }
-  }, [orderInfo]);
+  // useEffect(() => {
+  //   if (orderInfo && orderInfo.productIdList) {
+  //     console.log("parse");
+  //     let arr = JSON.parse(orderInfo.productIdList);
+  //     let result = getProductIdAndQuantity(arr);
+  //     setProductInfoList(result);
+  //     console.log(result);
+  //   }
+  // }, [orderInfo]);
 
   const handleDecreaseQuantity = (index) => {
     console.log(quantity[index]);
@@ -181,7 +184,7 @@ export const OrderDetails = () => {
                       isReOrder={isReOrder} data={item} key={index} index={index}/>
                   })} */}
             {console.log(orderInfo)}
-            {orderInfo && console.log(JSON.parse(orderInfo.productList))}
+            {console.log(productInfoList)}
             {/* {orderInfo && orderInfo} */}
           </tbody>
         </table>
