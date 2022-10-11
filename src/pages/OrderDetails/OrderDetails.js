@@ -85,6 +85,7 @@ export const OrderDetails = () => {
       let arr = JSON.parse(orderInfo.productIdList);
       let result = getProductIdAndQuantity(arr);
       setProductInfoList(result);
+      console.log(result);
     }
   }, [orderInfo]);
 
@@ -179,7 +180,6 @@ export const OrderDetails = () => {
                       isReOrder={isReOrder} data={item} key={index} index={index}/>
                   })} */}
             {console.log(orderInfo)}
-            {console.log(productInfoList)}
             {orderInfo && orderInfo}
           </tbody>
         </table>
