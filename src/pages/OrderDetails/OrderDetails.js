@@ -42,6 +42,7 @@ export const OrderDetails = () => {
   }, []);
 
   useEffect(() => {
+    console.log(productInfoList);
     if (productInfoList && productInfoList.length >= 0) {
       setQuantity(productInfoList.map((item) => 1));
       setUnitPrice(productInfoList.map((item) => 1));
@@ -174,7 +175,7 @@ export const OrderDetails = () => {
               <th>Unit Price</th>
               <th>Quantity</th>
               <th>Amount</th>
-              {/* <th>Seller</th> */}
+              <th>Seller</th>
             </tr>
           </thead>
           <tbody>
@@ -186,7 +187,7 @@ export const OrderDetails = () => {
                     handleDecreaseQuantity={handleDecreaseQuantity}
                     handleChangeQuantity={handleChangeQuantity}
                     handleIncreaseQuantity={handleIncreaseQuantity}
-                    quantity={quantity[index]}
+                    quantity={item.quantity}
                     isReOrder={isReOrder}
                     data={item}
                     key={index}
@@ -218,7 +219,7 @@ export const OrderDetails = () => {
             Total: {isReOrder ? totalPrice : orderInfo.totalPrice} $
           </p>
         )}
-        <div className="button-area">
+        {/* <div className="button-area">
           {!isReOrder && (
             <button onClick={handleClickReOrderBtn}>Re-order</button>
           )}
@@ -229,7 +230,7 @@ export const OrderDetails = () => {
             <button className="disable">Order</button>
           )}
           {isReOrder && <button onClick={handleClickCancelBtn}>Cancel</button>}
-        </div>
+        </div> */}
       </div>
     </div>
   );
