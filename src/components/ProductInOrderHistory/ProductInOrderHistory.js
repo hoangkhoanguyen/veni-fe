@@ -88,7 +88,7 @@ export const ProductInOrderHistory = (props) => {
             </td>
           )}
           {!isReOrder ? (
-            <td>{data.quan * productInfo.price} $</td>
+            <td>{quantity * productInfo.price} $</td>
           ) : (
             <td className="amount">{amount} $</td>
           )}
