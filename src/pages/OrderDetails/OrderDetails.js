@@ -85,7 +85,7 @@ export const OrderDetails = () => {
       let arr = JSON.parse(orderInfo.productIdList);
       let result = getProductIdAndQuantity(arr);
       setProductInfoList(result);
-      console.log(result);
+      // console.log(result);
     }
   }, [orderInfo]);
 
