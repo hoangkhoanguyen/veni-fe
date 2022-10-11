@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CheckBox } from "../../components/CheckBox/CheckBox";
+
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { path } from "../../constant";
 import { Blog } from "../Blog/Blog";
 import { Cart } from "../Cart/Cart";
+import { CheckOut } from "../CheckOut/CheckOut";
 import { Contact } from "../Contact/Contact";
 import { History } from "../History/History";
 import { HomePage } from "../HomePage/HomePage";
@@ -29,7 +30,7 @@ export const NormalPage = () => {
           <Route path={path.MY_STORE} element={<MyStore />} />
           <Route path={path.ORDER} element={<Order />} />
           <Route path={path.ORDER_DETAILS} element={<OrderDetails />} />
-          <Route path={path.CHECK_OUT} element={<CheckBox />} />
+          <Route path={path.CHECK_OUT} element={<CheckOut />} />
           <Route path={path.PRODUCT_DETAILS} element={<ProductDetails />} />
           <Route path={path.CONTACT} element={<Contact />} />
           <Route path={path.BLOGS} element={<Blog />} />
