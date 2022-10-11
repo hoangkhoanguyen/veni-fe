@@ -180,7 +180,8 @@ export const OrderDetails = () => {
                       isReOrder={isReOrder} data={item} key={index} index={index}/>
                   })} */}
             {console.log(orderInfo)}
-            {orderInfo && orderInfo}
+            {productInfoList && console.log(productInfoList)}
+            {/* {orderInfo && orderInfo} */}
           </tbody>
         </table>
         {orderInfo && (
