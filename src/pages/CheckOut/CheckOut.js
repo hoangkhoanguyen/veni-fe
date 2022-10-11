@@ -9,8 +9,10 @@ import orderService from "../../services/orderService";
 import { path } from "../../constant";
 import { toast } from "react-toastify";
 import Validate from "../../services/Validate";
+import { useNavigate } from "react-router-dom";
 
 export const CheckOut = () => {
+  const navigate = useNavigate();
   const [isNewMember, setIsNewMember] = useState(true);
   // const [cloneUserInfo, setCloneUserInfo] = useState({})
   const [orderUserInfo, setOrderUserInfo] = useState({});
@@ -20,7 +22,11 @@ export const CheckOut = () => {
   const userInfo = useSelector((state) => state.user.userInfo);
   const isLogin = useSelector((state) => state.user.isLogin);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (!isLogin) {
+      navigate(path.LOGIN);
+    }
+  }, [isLogin]);
   useEffect(() => {
     setOrderUserInfo({
       firstName: (userInfo && userInfo.firstName) || "",
