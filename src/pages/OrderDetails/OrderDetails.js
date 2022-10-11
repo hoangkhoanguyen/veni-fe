@@ -26,7 +26,9 @@ export const OrderDetails = () => {
       if (result && result.errCode === 0) {
         setOrderInfo(result.data);
         if (result.data.productIdList) {
+          console.log(result.data.productIdList);
           setProductInfoList(JSON.parse(result.data.productIdList));
+          console.log(JSON.parse(result.data.productIdList));
         }
       }
     } catch (error) {
