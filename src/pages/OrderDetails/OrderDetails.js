@@ -173,8 +173,8 @@ export const OrderDetails = () => {
               <th>Name</th>
               <th>Unit Price</th>
               <th>Quantity</th>
-              <th>Amount</th>
-              <th>Seller</th>
+              {/* <th>Amount</th> */}
+              {/* <th>Seller</th> */}
             </tr>
           </thead>
           <tbody>
@@ -188,7 +188,22 @@ export const OrderDetails = () => {
                   })} */}
             {console.log(orderInfo)}
             {console.log(productInfoList)}
-            {/* {orderInfo && orderInfo} */}
+            {productInfoList &&
+              productInfoList.length > 0 &&
+              productInfoList.map((item, index) => {
+                return (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>
+                      <img src={item.image} alt="" />
+                    </td>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                    <td>{item.quantity}</td>
+                    {/* <td>{item.price * item.quantity}</td> */}
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
         {orderInfo && (
@@ -196,7 +211,7 @@ export const OrderDetails = () => {
             Total: {isReOrder ? totalPrice : orderInfo.totalPrice} $
           </p>
         )}
-        <div className="button-area">
+        {/* <div className="button-area">
           {!isReOrder && (
             <button onClick={handleClickReOrderBtn}>Re-order</button>
           )}
@@ -207,7 +222,7 @@ export const OrderDetails = () => {
             <button className="disable">Order</button>
           )}
           {isReOrder && <button onClick={handleClickCancelBtn}>Cancel</button>}
-        </div>
+        </div> */}
       </div>
     </div>
   );
