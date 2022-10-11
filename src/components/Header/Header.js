@@ -15,7 +15,7 @@ export const Header = () => {
   const isLogin = useSelector((state) => state.user.isLogin);
   const isChangeCart = useSelector((state) => state.app.isChangeCart);
   const isChangeHeart = useSelector((state) => state.app.isChangeHeart);
-  const urlNeedLogin = [path.MY_STORE, path.PROFILE];
+  const urlNeedLogin = [path.MY_STORE, path.PROFILE, path.CHECK_OUT];
 
   const [isShowLeftMenu, setIsShowLeftMenu] = useState(false);
   const [isShowRightMenu, setIsShowRightMenu] = useState(false);
