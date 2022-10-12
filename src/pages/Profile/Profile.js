@@ -176,6 +176,7 @@ export const Profile = () => {
               <GoogleLogin
                 onSuccess={handleLinkGoogleSuccess}
                 onError={handleLinkGoogleFail}
+                text="link to google account"
               ></GoogleLogin>
             </div>
           )}
