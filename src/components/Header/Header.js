@@ -264,11 +264,15 @@ export const Header = () => {
                     {isShowUserOptionsMobile && (
                       <div className="user-option">
                         <span>
-                          <a href={path.PROFILE}>
-                            <i className="fas fa-user"></i> My account
+                          <a
+                            href={process.env.REACT_APP_URL_MANAGE_WEBSITE}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <i classname="fas fa-wrench"></i> Settings
                           </a>
                         </span>
-
+                        {/* 
                         <span>
                           <a href={path.MY_STORE}>
                             <i className="fas fa-store"></i> My shop
@@ -279,7 +283,7 @@ export const Header = () => {
                           <a href={path.HISTORY}>
                             <i className="fas fa-history"></i> My orders
                           </a>
-                        </span>
+                        </span> */}
 
                         <span onClick={handleLogout}>
                           <i className="fas fa-sign-out-alt"></i> Log out
