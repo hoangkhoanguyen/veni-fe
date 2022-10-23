@@ -150,20 +150,12 @@ export const Header = () => {
                         {userInfo.firstName + " " + userInfo.lastName}
                         <div className="user-option">
                           <span>
-                            <a href={path.PROFILE}>
-                              <i className="fas fa-user"></i> My account
-                            </a>
-                          </span>
-
-                          <span>
-                            <a href={path.MY_STORE}>
-                              <i className="fas fa-store"></i> My shop
-                            </a>
-                          </span>
-
-                          <span>
-                            <a href={path.HISTORY}>
-                              <i className="fas fa-history"></i> My orders
+                            <a
+                              href={process.env.REACT_APP_URL_MANAGE_WEBSITE}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <i classname="fas fa-wrench"></i> Settings
                             </a>
                           </span>
 
