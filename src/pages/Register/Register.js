@@ -23,7 +23,7 @@ export const Register = () => {
     firstName: "",
     lastName: "",
     password: "",
-    re_password: "",
+    rePassword: "",
   });
 
   const handleChangeInput = (e, key) => {
@@ -58,11 +58,11 @@ export const Register = () => {
       toast.error("Password must not be empty!");
       return;
     }
-    if (!Validate.ValidateMustNotEmpty(userInfo.re_password)) {
+    if (!Validate.ValidateMustNotEmpty(userInfo.rePassword)) {
       toast.error("Please confirm password!");
       return;
     }
-    if (userInfo.re_password != userInfo.password) {
+    if (userInfo.rePassword != userInfo.password) {
       toast.error("Re-password does not match!");
       return;
     }
@@ -72,6 +72,7 @@ export const Register = () => {
         password: userInfo.password,
         firstName: userInfo.firstName,
         lastName: userInfo.lastName,
+        rePassword: userInfo.rePassword,
       });
       if (result && result.errCode === 0) {
         toast.success(result.errMsg);
@@ -131,9 +132,9 @@ export const Register = () => {
         <input
           type="password"
           placeholder="Confirm password"
-          value={userInfo.re_password}
+          value={userInfo.rePassword}
           onChange={(e) => {
-            handleChangeInput(e, "re_password");
+            handleChangeInput(e, "rePassword");
           }}
         />
         <div>
