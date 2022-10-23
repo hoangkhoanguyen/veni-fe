@@ -149,13 +149,30 @@ export const Header = () => {
                       <li className="user-name">
                         {userInfo.firstName + " " + userInfo.lastName}
                         <div className="user-option">
-                          <span>
+                          {/* <span>
                             <a
                               href={process.env.REACT_APP_URL_MANAGE_WEBSITE}
                               target="_blank"
                               rel="noreferrer"
                             >
                               <i className="fas fa-tools"></i> Settings
+                            </a>
+                          </span> */}
+                          <span>
+                            <a href={path.PROFILE}>
+                              <i className="fas fa-user"></i> My account
+                            </a>
+                          </span>
+
+                          <span>
+                            <a href={path.MY_STORE}>
+                              <i className="fas fa-store"></i> My shop
+                            </a>
+                          </span>
+
+                          <span>
+                            <a href={path.HISTORY}>
+                              <i className="fas fa-history"></i> My orders
                             </a>
                           </span>
 
@@ -255,15 +272,15 @@ export const Header = () => {
                     </span>
                     {isShowUserOptionsMobile && (
                       <div className="user-option">
-                        <span>
+                        {/* <span>
                           <a
                             href={process.env.REACT_APP_URL_MANAGE_WEBSITE}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <i className="fas fa-tools"></i> Settings
+                            <i classname="fas fa-wrench"></i> Settings
                           </a>
-                        </span>
+                        </span> */}
                         {/* 
                         <span>
                           <a href={path.MY_STORE}>
@@ -276,6 +293,23 @@ export const Header = () => {
                             <i className="fas fa-history"></i> My orders
                           </a>
                         </span> */}
+                        <span>
+                          <a href={path.PROFILE}>
+                            <i className="fas fa-user"></i> My account
+                          </a>
+                        </span>
+
+                        <span>
+                          <a href={path.MY_STORE}>
+                            <i className="fas fa-store"></i> My shop
+                          </a>
+                        </span>
+
+                        <span>
+                          <a href={path.HISTORY}>
+                            <i className="fas fa-history"></i> My orders
+                          </a>
+                        </span>
 
                         <span onClick={handleLogout}>
                           <i className="fas fa-sign-out-alt"></i> Log out
