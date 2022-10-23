@@ -155,7 +155,7 @@ export const Header = () => {
                               target="_blank"
                               rel="noreferrer"
                             >
-                              <i classname="fas fa-wrench"></i> Settings
+                              <i className="fas fa-tools"></i> Settings
                             </a>
                           </span>
 
@@ -261,7 +261,7 @@ export const Header = () => {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <i classname="fas fa-wrench"></i> Settings
+                            <i className="fas fa-tools"></i> Settings
                           </a>
                         </span>
                         {/* 
